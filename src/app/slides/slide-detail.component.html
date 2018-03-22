@@ -1,0 +1,54 @@
+<div class='panel panel-primary' *ngIf='slide'>
+    <div class='panel-heading'>
+        {{pageTitle + ': ' + slide.slideName}}
+    </div>
+
+    <div class='panel-body'>
+        <div class='row'>
+            <div class='col-md-6'>
+                <div class='row'>
+                    <div class='col-md-3'>Name:</div>
+                    <div class='col-md-6'>{{slide.slideName}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>Code:</div>
+                    <div class='col-md-6'>{{slide.slideCode | lowercase | convertToSpaces: '-'}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>Cation:</div>
+                    <div class='col-md-6'>{{slide.caption}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>Date Taken:</div>
+                    <div class='col-md-6'>{{slide.takenDate}}</div>
+                </div>
+                <!--<div class='row'>
+                    <div class='col-md-3'>Price:</div>
+                    <div class='col-md-6'>{{slide.price|currency:'USD':true}}</div>
+                </div>-->
+                <!--<div class='row'>
+                    <div class='col-md-3'>5 Star Rating:</div>
+                    <div class='col-md-6'>
+                        <pm-star [rating]='product.starRating'>
+                        </pm-star>
+                    </div>
+                </div>-->
+            </div>
+
+            <div class='col-md-6'>
+                <img class='center-block img-responsive' 
+                    [style.width.px]='slide.slideWidth'
+                    [style.height.px]='slide.slideWidth'
+                    [style.margin.px]='slide.slideMargin'
+                    [src]='slide.imageUrl'
+                    [title]='slide.slideName'>
+            </div>
+        </div>
+    </div>
+
+    <div class='panel-footer'>
+        <a class='btn btn-default' (click)='onBack()' style='width:80px'>
+            <i class='glyphicon glyphicon-chevron-left'></i> Back
+        </a>
+    </div>
+</div>
